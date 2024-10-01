@@ -1,11 +1,11 @@
 import {BootMixin} from '@loopback/boot';
 import {ApplicationConfig} from '@loopback/core';
+import {RepositoryMixin} from '@loopback/repository';
+import {RestApplication, RestBindings} from '@loopback/rest';
 import {
   RestExplorerBindings,
   RestExplorerComponent,
 } from '@loopback/rest-explorer';
-import {RepositoryMixin} from '@loopback/repository';
-import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
@@ -40,5 +40,7 @@ export class FriendApplication extends BootMixin(
         nested: true,
       },
     };
+    this.bind(RestBindings.PORT).to(parseInt(process.env.PORT ?? '1000', 10));
+    this.bind(RestBindings.HOST).to('0.0.0.0');
   }
 }

@@ -3,7 +3,7 @@ import {juggler} from '@loopback/repository';
 
 const config = {
 
-  name: 'db',
+  name: 'test_9wg1',
   connector: 'postgresql',
   ulr: 'postgresql://test_9wg1_user:NHNpxQn7sHKceZiPuJaHyqGByy0Sy0Oe@dpg-crtrf9t2ng1s73cdi7c0-a.frankfurt-postgres.render.com/test_9wg1',
   ssl: true,
